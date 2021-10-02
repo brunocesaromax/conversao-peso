@@ -10,3 +10,25 @@
   ```bash 
   docker container run -d -p 5000:80 brunocesar96/conversao-peso:v1
   ```
+## Passo-a-passo do processo de implementação do projeto no Kubernetes
+  Pré requisitos:    
+  - Arquivo Dockerfile já configurado no projeto
+  - Cluster já instanciado para aplicação do kubernetes. Para confirmar:
+  ```bash
+  docker container ls
+  ```
+  
+  1 - Criar diretório ks8 na raíz do projeto
+  ```bash
+  mkdir ks8
+  ```
+  2 - Criar e configurar o arquivo de deployment
+  
+  3 -  Fazer o build da imagem da aplicação:
+  ```bash 
+  kubectl apply -f deployment.yaml
+  ```
+  4 - Verificar configuração do kubernetes aplicada:
+  ```bash 
+  kubectl get all
+  ```  
